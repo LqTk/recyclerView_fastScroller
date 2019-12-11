@@ -14,6 +14,8 @@ recyclerView 快速滑动插件
         <com.org.lqtk.fastscroller.RecyclerFastScroller  
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
+            app:rfs_handleNormalColor="@color/gray"
+            app:rfs_handlePressedColor="@color/colorAccent"
             android:layout_gravity="end"/>  
     </FrameLayout>
     
