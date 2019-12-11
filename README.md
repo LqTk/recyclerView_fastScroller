@@ -1,6 +1,8 @@
 # recyclerView_fastScroller
 recyclerView 快速滑动插件
+
 添加依赖：implementation 'com.github.LqTk:recyclerView_fastScroller:1.1.0'
+
 引用方法：
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,6 +15,7 @@ recyclerView 快速滑动插件
             android:layout_height="wrap_content"
             android:layout_gravity="end"/>
     </FrameLayout>
+    
 使用时必须添加在framelayout布局中。
 
 fastScroller插件主要解决当recyclerView的数据存在大量时。例如几百，几千条时，recyclerView本身自带的fastScroll
