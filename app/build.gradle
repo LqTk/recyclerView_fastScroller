@@ -29,4 +29,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45'
     implementation project(path: ':fastscroller')
+//    implementation 'com.github.LqTk:recyclerView_fastScroller:1.0.0'
 }

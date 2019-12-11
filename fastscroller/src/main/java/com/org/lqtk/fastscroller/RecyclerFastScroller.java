@@ -63,6 +63,7 @@ public class RecyclerFastScroller extends FrameLayout {
         @Override
         public void onChanged() {
             super.onChanged();
+            updateHandleColorsAndInset();
             requestLayout();
         }
     };
@@ -384,7 +385,7 @@ public class RecyclerFastScroller extends FrameLayout {
         StateListDrawable drawable = new StateListDrawable();
 
         if (!RecyclerFastScrollerUtils.isRTL(getContext())) {
-            if (isTouchDrawable()){
+            if (isTouchDrawable() && showFastScorllBar()){
                 drawable.addState(View.PRESSED_ENABLED_STATE_SET,
                         new InsetDrawable(pressedDrawable, mBarInset, 0, 0, 0));
                 drawable.addState(View.EMPTY_STATE_SET,
@@ -396,7 +397,7 @@ public class RecyclerFastScroller extends FrameLayout {
                         new InsetDrawable(new ColorDrawable(mHandleNormalColor), mBarInset, 0, 0, 0));
             }
         } else {
-            if (isTouchDrawable()){
+            if (isTouchDrawable() && showFastScorllBar()){
                 drawable.addState(View.PRESSED_ENABLED_STATE_SET,
                         new InsetDrawable(pressedDrawable, 0, 0, mBarInset, 0));
                 drawable.addState(View.EMPTY_STATE_SET,
@@ -458,6 +459,7 @@ public class RecyclerFastScroller extends FrameLayout {
             adapter.registerAdapterDataObserver(mAdapterObserver);
         }
         mAdapter = adapter;
+        updateHandleColorsAndInset();
     }
 
     /**
@@ -547,8 +549,10 @@ public class RecyclerFastScroller extends FrameLayout {
             calculatedHandleHeight = mMinScrollHandleHeight;
         }
 
-        if (calculatedHandleHeight> mMaxScrollHandleHeight){
-            calculatedHandleHeight = mMaxScrollHandleHeight;
+        if (showFastScorllBar()) {
+            if (calculatedHandleHeight > mMaxScrollHandleHeight) {
+                calculatedHandleHeight = mMaxScrollHandleHeight;
+            }
         }
 
         if (calculatedHandleHeight >= barHeight) {
@@ -563,6 +567,13 @@ public class RecyclerFastScroller extends FrameLayout {
 
         Log.d("eventprint",mHandle.getBottom()+",2");
         mHandle.layout(mHandle.getLeft(), (int) y, mHandle.getRight(), (int) y + calculatedHandleHeight);
+    }
+
+    private boolean showFastScorllBar(){
+        if (mAdapter!=null && mAdapter.getItemCount()>=500){
+            return true;
+        }
+        return false;
     }
 
     /**

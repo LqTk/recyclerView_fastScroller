@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFastScroll() {
-//        fastScroller.setHidingEnabled(false);
+        fastScroller.setHidingEnabled(false);
         fastScroller.touchIsDrawable(true);
         fastScroller.setTouchTargetWidth(25);
         fastScroller.setMarginLeft(10);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        for (int i=0;i<1000;i++){
+        for (int i=0;i<500;i++){
             strs.add("测试数据第"+i+"条");
         }
     }
