@@ -1,6 +1,6 @@
 # recyclerView_fastScroller
 recyclerView 快速滑动插件
-添加依赖：implementation 'com.github.LqTk:recyclerView_fastScroller:1.0.0'
+添加依赖：implementation 'com.github.LqTk:recyclerView_fastScroller:1.1.0'
 引用方法：
     <FrameLayout
         android:layout_width="match_parent"
