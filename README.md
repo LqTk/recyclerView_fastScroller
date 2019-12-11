@@ -4,17 +4,18 @@ recyclerView 快速滑动插件
 添加依赖：implementation 'com.github.LqTk:recyclerView_fastScroller:1.1.0'
 
 引用方法：
-        <FrameLayout  
+
+    <FrameLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="match_parent">  
+        <androidx.recyclerview.widget.RecyclerView  
             android:layout_width="match_parent"  
-            android:layout_height="match_parent">  
-            <androidx.recyclerview.widget.RecyclerView  
-                android:layout_width="match_parent"  
-                android:layout_height="match_parent"/>  
-            <com.org.lqtk.fastscroller.RecyclerFastScroller  
-                android:layout_width="wrap_content"  
-                android:layout_height="wrap_content"  
-                android:layout_gravity="end"/>  
-        </FrameLayout>  
+            android:layout_height="match_parent"/>  
+        <com.org.lqtk.fastscroller.RecyclerFastScroller  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_gravity="end"/>  
+    </FrameLayout>
     
 使用时必须添加在framelayout布局中。
 
